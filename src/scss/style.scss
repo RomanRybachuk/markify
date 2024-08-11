@@ -1,0 +1,278 @@
+// Variables
+$desktop-viewport-width: 1440px;
+$tablet-viewport-width: 1024px;
+$mobile-viewport-width: 768px;
+$color: red;
+
+:root {
+  --color-grey: #f3f3f3;
+  --color-grey-black: #707070;
+  --color-black: #19191a;
+  --color-white: #ffffff;
+  --color-milk: #e1e1e1;
+
+  --z-index-nav: 200;
+  --z-index-menu: 300;
+  --z-index-header: 300;
+
+  --page-container-width: calc(1600px + 40px);
+  --main-container-width: calc(760px + 40px);
+  --aside-container-width: calc(416px + 40px);
+}
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  background: none;
+  border: none;
+}
+
+// Scroll bar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 20, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+}
+
+// Fonts
+@import "./fonts.scss";
+
+// Components
+@import "./components/header.scss";
+@import "./components/menu.scss";
+@import "./components/nav.scss";
+@import "./components/title.scss";
+@import "./components/post.scss";
+@import "./components/comment.scss";
+@import "./components/author.scss";
+@import "./components/recents-post.scss";
+
+// Base
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: var(--color-milk);
+  line-height: 150%;
+  color: var(--color-black);
+}
+
+.box {
+  border-radius: 8px;
+  background-color: var(--color-white);
+}
+
+.container {
+  padding: 0px 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.main {
+  & .container {
+    max-width: var(--main-container-width);
+  }
+}
+
+.aside {
+  & .container {
+    max-width: var(--aside-container-width);
+  }
+
+  &__author {
+    margin-bottom: 30px;
+  }
+}
+
+.content {
+  padding: 60px 0px 30px;
+
+  &__container {
+    max-width: var(--page-container-width);
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__main {
+    width: 100%;
+  }
+
+  &__aside {
+    margin-left: 25px;
+    min-width: 470px;
+  }
+}
+
+.field {
+  display: flex;
+
+  & input {
+    padding: 14px 16px;
+    border-radius: 8px;
+    border: 1px solid #cfcfcf;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--color-grey-black);
+    }
+  }
+}
+
+.button {
+  border-radius: 8px;
+  background-color: var(--color-black);
+  padding: 8px 18px;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 500;
+  transition-duration: 250ms;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0);
+
+  &--transparent {
+    background: none;
+    color: var(--color-black);
+    border: 1px solid var(--color-grey-black);
+
+    &:hover {
+      box-shadow: 2px 3px 6px rgba(0, 0, 0, 0) !important;
+    }
+  }
+
+  &--large {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:hover {
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  display: flex;
+  margin: 20px 0;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 2px solid var(--color-black);
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+@media (max-width: $desktop-viewport-width) {
+  .content {
+    &__aside {
+      min-width: initial;
+    }
+  }
+}
+
+@media (max-width: $tablet-viewport-width) {
+  .content {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__main {
+      margin: 0 0 0 0;
+    }
+
+    &__aside {
+      margin: 0 0 0 0;
+    }
+
+    &__container {
+      padding: 0px 0px;
+    }
+  }
+
+  .box {
+    border-radius: 0px;
+  }
+
+  .aside {
+    &__author {
+      margin: 0 0 0 0;
+    }
+  }
+}
