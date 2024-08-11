@@ -1,12 +1,47 @@
-// @font-face {
-//   font-family: "Inter";
-//   src: url("../assets/fonts/inter/regular/Inter-Regular.eot");
-//   src: url("../assets/fonts/inter/regular/Inter-Regular.eot?#iefix")
-//       format("embedded-opentype"),
-//     url("../assets/fonts/inter/regular/Inter-Regular.woff2") format("woff2"),
-//     url("../assets/fonts/inter/regular/Inter-Regular.woff") format("woff"),
-//     url("../assets/fonts/inter/regular/Inter-Regular.ttf") format("truetype"),
-//     url("../assets/fonts/inter/regular/Inter-Regular.svg#Inter") format("svg");
-//   font-weight: 400;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/open-sans/regular/OpenSans-Regular.eot");
+  src: url("../assets/fonts/open-sans/regular/OpenSans-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/open-sans/regular/OpenSans-Regular.woff2")
+      format("woff2"),
+    url("../assets/fonts/open-sans/regular/OpenSans-Regular.woff")
+      format("woff"),
+    url("../assets/fonts/open-sans/regular/OpenSans-Regular.ttf")
+      format("truetype"),
+    url("../assets/fonts/open-sans/regular/OpenSans-Regular.svg#OpenSans")
+      format("svg");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.eot");
+  src: url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.woff2")
+      format("woff2"),
+    url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.woff")
+      format("woff"),
+    url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.ttf")
+      format("truetype"),
+    url("../assets/fonts/open-sans/semibold/OpenSans-SemiBold.svg#OpenSans")
+      format("svg");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/open-sans/bold/OpenSans-Bold.eot");
+  src: url("../assets/fonts/open-sans/bold/OpenSans-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/open-sans/bold/OpenSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/open-sans/bold/OpenSans-Bold.woff") format("woff"),
+    url("../assets/fonts/open-sans/bold/OpenSans-Bold.ttf") format("truetype"),
+    url("../assets/fonts/open-sans/bold/OpenSans-Bold.svg#OpenSans")
+      format("svg");
+  font-weight: 700;
+  font-display: swap;
+}
