@@ -1,6 +1,9 @@
 @import "./reset.scss";
 @import "./fonts.scss";
 
+// Pages
+@import "../index.scss";
+
 // Components
 @import "./components/header.scss";
 @import "./components/menu.scss";
@@ -14,9 +17,9 @@ body {
   font-family: "OpenSans", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background-color: var(--color-milk);
   line-height: 150%;
   color: var(--color-black);
+  background-color: var(--color-milk);
 }
 
 .container {
@@ -24,4 +27,48 @@ body {
   margin: 0 auto;
   width: 100%;
   max-width: 1140px;
+}
+
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__nav {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.section-image {
+  max-width: 460px;
+  width: 100%;
+}
+
+.inner {
+  padding: 42px 0;
+}
+
+.highlight {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 20px;
+    background-color: var(--color-yellow);
+    height: 12px;
+    z-index: -1;
+  }
 }

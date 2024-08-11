@@ -45,3 +45,16 @@
   font-weight: 700;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Exo";
+  src: url("../assets/fonts/exo/bold/Exo-Bold.eot");
+  src: url("../assets/fonts/exo/bold/Exo-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/exo/bold/Exo-Bold.woff2") format("woff2"),
+    url("../assets/fonts/exo/bold/Exo-Bold.woff") format("woff"),
+    url("../assets/fonts/exo/bold/Exo-Bold.ttf") format("truetype"),
+    url("../assets/fonts/exo/bold/Exo-Bold.svg#Exo") format("svg");
+  font-weight: 700;
+  font-display: swap;
+}

@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="" />
+  <meta name="description" content="{{ description }}" />
   <title>{{ title }}</title>
 </head>
 
 <body>
-  <div id="root">
+  <div id="root" class="root">
     <header class="header" id="header">
       <div class="container">
         <div class="header__inner">
-          <div class="header__top">
-            <div class="header__logo logo">
-              <a class="logo__link" href="/">
-                <img src="{{src 'assets/logo.svg'}}" alt="logo">
-              </a>
-            </div>
+          <div class="header__logo logo">
+            <a class="logo__link" href="/">
+              <img src="{{src 'assets/logo.svg'}}" alt="logo">
+            </a>
           </div>
-          <nav class="header__nav nav">
-            <ul class="nav__list">
-              <li class="nav__item">
-                <a class="nav__link" href="/home/">Home</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="/about/">About</a>
-              </li>
-              <li class="nav__item">
-                <a class="nav__link" href="/services/">Services</a>
-              </li>
-            </ul>
-          </nav>
+          <button class="button">
+            <span>Sign Up</span>
+          </button>
         </div>
       </div>
     </header>
+    <nav class="root__nav nav">
+      <ul class="nav__list">
+        <li class="nav__item {{nav_link_active 'index'}}">
+          <a class="nav__link" href="/">Home</a>
+        </li>
+        <li class="nav__item {{nav_link_active 'about'}}">
+          <a class="nav__link" href="/about/">About</a>
+        </li>
+        <li class="nav__item {{nav_link_active 'services'}}">
+          <a class="nav__link" href="/services/">Services</a>
+        </li>
+      </ul>
+    </nav>
     <main class="main">

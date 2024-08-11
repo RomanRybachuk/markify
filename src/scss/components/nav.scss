@@ -1,0 +1,38 @@
+.nav {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+  }
+
+  &__link {
+    padding: 5px;
+    position: relative;
+    font-weight: 600;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+      right: 5px;
+      height: 1px;
+      background-color: var(--color-yellow);
+      visibility: hidden;
+    }
+  }
+
+  &__item {
+    &.active {
+      .nav {
+        &__link {
+          color: var(--color-yellow);
+
+          &::after {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}

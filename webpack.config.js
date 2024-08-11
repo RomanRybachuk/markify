@@ -67,7 +67,12 @@ module.exports = {
               );
 
               return Handlebars.compile(content)(
-                context ? JSON.parse(context) : {}
+                context
+                  ? {
+                      page,
+                      ...JSON.parse(context),
+                    }
+                  : {}
               );
             } catch (error) {
               loaderContext.emitError(error);
