@@ -7,7 +7,7 @@
     "dev": "webpack serve  --mode development --hot",
     "watch": "webpack watch  --mode development",
     "build": "webpack build --mode production",
-    "deploy": "npm run build && firebase deploy"
+    "deploy": "npm run build && firebase deploy --only hosting:production"
   },
   "keywords": [
     "html",

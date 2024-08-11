@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "subsub-blog"
+    "default": "deploy-services"
+  },
+  "targets": {
+    "deploy-services": {
+      "hosting": {
+        "production": [
+          "markify"
+        ]
+      }
+    }
   }
 }
