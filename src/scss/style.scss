@@ -13,6 +13,7 @@
 @import "./components/logo.scss";
 @import "./components/button.scss";
 @import "./components/social.scss";
+@import "./components/marquee.scss";
 
 // Base
 body {
@@ -65,18 +66,37 @@ body {
 
 .highlight {
   position: relative;
+  display: inline-block;
 
   &::after {
     content: "";
     position: absolute;
     bottom: 5px;
     left: 0;
-    right: 0;
-    width: 100%;
     border-radius: 20px;
     background-color: var(--color-yellow);
     height: 12px;
     z-index: -1;
+  }
+}
+
+html.loaded {
+  .highlight {
+    &::after {
+      animation-fill-mode: forwards;
+      animation-duration: 700ms;
+      animation-name: highlight;
+    }
+  }
+}
+
+@keyframes highlight {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
   }
 }
 

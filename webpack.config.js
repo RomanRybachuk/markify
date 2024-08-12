@@ -23,6 +23,21 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [
+                  [
+                    "autoprefixer",
+                    {
+                      overrideBrowserslist: ["> 1%", "last 2 versions"],
+                    },
+                  ],
+                ],
+              },
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
               additionalData: "@import './src/scss/variables.scss';",

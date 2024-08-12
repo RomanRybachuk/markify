@@ -6,6 +6,7 @@ const loader = document.querySelector(".loader-window");
 const links = document.querySelectorAll("a");
 
 window.addEventListener("load", () => {
+  document.documentElement.classList.add("loaded");
   loader.classList.add("hidden");
 });
 
@@ -21,3 +22,5 @@ links.forEach((link) => {
     }, 200);
   });
 });
+
+const sections = Array.from(document.querySelectorAll("section"));

@@ -7,6 +7,10 @@ const partials = [
     name: "end",
     path: "layout/end.hbs",
   },
+  {
+    name: "marquee",
+    path: "partials/marquee.hbs",
+  },
 ];
 
 const pages = [
