@@ -1,0 +1,40 @@
+.footer {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 64px 0;
+  }
+
+  &__logo {
+    margin-bottom: 24px;
+  }
+
+  &__nav {
+    margin-bottom: 28px;
+  }
+
+  &__social {
+    margin-bottom: 28px;
+  }
+
+  &__contact {
+    & .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: $mobile-viewport-width) {
+  .footer {
+    &__nav {
+      .nav {
+        &__list {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

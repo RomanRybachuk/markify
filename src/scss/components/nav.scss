@@ -9,6 +9,11 @@
     padding: 5px;
     position: relative;
     font-weight: 600;
+    transition-duration: 250ms;
+
+    &:hover {
+      opacity: 0.6;
+    }
 
     &::after {
       content: "";
@@ -34,5 +39,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: $mobile-viewport-width) {
+  .nav {
+    padding: 24px 0;
   }
 }

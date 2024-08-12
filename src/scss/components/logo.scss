@@ -6,3 +6,11 @@
     width: 100%;
   }
 }
+
+@media (max-width: $mobile-viewport-width) {
+  .logo {
+    &__link {
+      max-width: 145px;
+    }
+  }
+}

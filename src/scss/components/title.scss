@@ -5,6 +5,16 @@
   flex-direction: column;
   gap: 28px;
 
+  &.x-small {
+    gap: 12px;
+
+    .title {
+      &__main {
+        font-size: 16px;
+      }
+    }
+  }
+
   &__main {
     color: var(--color-black);
     font-size: 44px;
@@ -17,5 +27,15 @@
     color: var(--color-grey);
     font-size: 16px;
     line-height: 150%;
+  }
+}
+
+@media (max-width: $tablet-viewport-width) {
+  .title {
+    gap: 20px;
+
+    &__main {
+      font-size: 28px;
+    }
   }
 }

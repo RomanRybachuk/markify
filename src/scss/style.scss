@@ -6,11 +6,13 @@
 
 // Components
 @import "./components/header.scss";
+@import "./components/footer.scss";
 @import "./components/menu.scss";
 @import "./components/nav.scss";
 @import "./components/title.scss";
 @import "./components/logo.scss";
 @import "./components/button.scss";
+@import "./components/social.scss";
 
 // Base
 body {
@@ -37,9 +39,9 @@ body {
 
   &__nav {
     margin: 0 auto;
-    position: sticky;
-    top: 0;
-    left: 0;
+    // position: sticky;
+    // top: 0;
+    // left: 0;
   }
 }
 
@@ -52,8 +54,13 @@ body {
   width: 100%;
 }
 
-.inner {
+.section-inner {
   padding: 42px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
 
 .highlight {
@@ -70,5 +77,88 @@ body {
     background-color: var(--color-yellow);
     height: 12px;
     z-index: -1;
+  }
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid var(--color-purple);
+  animation: prixClipFix 2s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+.loader-window {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 200ms;
+
+  opacity: 1;
+  visibility: visible;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: $tablet-viewport-width) {
+  .section-image {
+    max-width: 285px;
+  }
+}
+
+@media (max-width: $mobile-viewport-width) {
+  .highlight {
+    &::after {
+      bottom: 3;
+      height: 10px;
+    }
+  }
+
+  .section-inner {
+    flex-direction: column;
+    padding: 12px 0;
   }
 }
