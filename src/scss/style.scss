@@ -172,7 +172,7 @@ html.loaded {
 @media (max-width: $mobile-viewport-width) {
   .highlight {
     &::after {
-      bottom: 3;
+      bottom: 1;
       height: 10px;
     }
   }

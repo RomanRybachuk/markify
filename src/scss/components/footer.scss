@@ -29,6 +29,10 @@
 
 @media (max-width: $mobile-viewport-width) {
   .footer {
+    &__inner {
+      padding: 40px 0;
+    }
+
     &__nav {
       .nav {
         &__list {
