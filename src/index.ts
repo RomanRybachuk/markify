@@ -3,7 +3,7 @@
 import "./scss/style.scss";
 
 const loader = document.querySelector(".loader-window");
-const links = document.querySelectorAll("a");
+const links = document.querySelectorAll("a:not([href^='mailto'])");
 
 window.addEventListener("load", () => {
   document.documentElement.classList.add("loaded");
@@ -22,5 +22,3 @@ links.forEach((link) => {
     }, 200);
   });
 });
-
-const sections = Array.from(document.querySelectorAll("section"));
